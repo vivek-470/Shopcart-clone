@@ -30,9 +30,9 @@ const Navbar = ({cart}) => {
       <div className=' items-center gap-5  md:flex'>
         <button className='bg-gray-200 h-[35px] w-[55px] rounded-sm'><Link to="login">Login </Link></button>
         <h1><Link to="cart">
-        <button>
+        <button className='mt-[20px]'>
           <FaShoppingCart className='text-2xl'/>
-          <span className='text-[18px]'>{cart.length}</span>
+          <span className='text-[15px] '>{cart.length}</span>
         </button></Link></h1>
       </div>
       <div onClick={HandleClick} className='md:hidden'>
