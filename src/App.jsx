@@ -10,7 +10,7 @@ import Footer from './components/Footer.jsx';
 import Login from './components/Login.jsx';
 import Signup from './components/Signup.jsx';
 import { useState } from 'react';
-import Abc from './components/abc.jsx';
+
 
 const App = () => {
   const [cart,setCart]=useState([]);
@@ -65,10 +65,7 @@ const App = () => {
       <BrowserRouter>
         <Navbar cart={cart}/>
        <Routes>
-        <Route path="/" element={<div>
-          <Home/>
-          <Abc/>
-          </div>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="/kids" element={<Kids/>} />
         <Route path="/mens" element={<Mens/>} />
         <Route path="/allproducts" element={<Allproducts Addtocart={Addtocart}/>} />
