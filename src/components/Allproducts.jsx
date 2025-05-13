@@ -3,6 +3,10 @@ import React, {useEffect,useState } from 'react'
 const Allproducts = ({Addtocart}) => {
   const [categories, setCategories] = useState([]);
   const [product,setProduct]=useState([]);
+  const [searchProduct,setSearchProduct]=useState("")
+  const [allProducts, setAllProducts] = useState([]);
+
+
   const [selectProduct,setselectProduct]=useState("");
   const filterProduct=(event)=>{
     setselectProduct(event.target.value)
@@ -22,6 +26,7 @@ const Allproducts = ({Addtocart}) => {
 
         if (data.products) {
           setProduct(data.products);
+          setAllProducts(data.products); 
         } else {
           console.warn("Unexpected response:", data);
           setProduct([]); // avoid undefined
@@ -40,7 +45,7 @@ const Allproducts = ({Addtocart}) => {
     const fetchCategory = async () => {
       try {
         const res = await fetch('https://dummyjson.com/products/categories');
-        const data = await res.json(); // You must await this!
+        const data = await res.json(); 
         setCategories(data);
         console.log(data)
       } catch (error) {
@@ -48,15 +53,30 @@ const Allproducts = ({Addtocart}) => {
       }
     };
   
-    fetchCategory(); // You must call the function
+    fetchCategory(); 
   }, []);
   
-  
-  
+  //search item
+   const filterSearch = (e) => {
+  const query = e.target.value;
+   setSearchProduct(query)
+
+  const filtered = allProducts.filter((item) =>
+    item.title.toLowerCase().includes(query.toLowerCase())
+  );
+
+  setProduct(filtered);
+};
+
   return (
     <div className='flex flex-col  py-[70px] gap-3  w-full max-w-[1530px] '>
+    
 
       <h1 className='font-bold text-3xl text-pink-600'>ALL CATEGORIES</h1>
+        <div className=' flex justify-center items-center '>
+          <input type="text"  placeholder='Enter something....' className="w-52 h-9 px-3 border-2  rounded-md focus:outline-none focus:border-pink-500 transition-colors duration-200"  value={searchProduct} onChange={(e)=>filterSearch(e)}/>
+
+        </div>
     <div className=' flex flex-wrap gap-3 mt-[20px]'> 
       <select  className='ml-[30px] border-2 rounded-sm' onChange={filterProduct}  >
         <option>Select a category</option>
