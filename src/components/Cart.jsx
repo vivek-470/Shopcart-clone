@@ -7,10 +7,10 @@ const Cart = ({cart,handleInc,handleDec,handleRemove,getTotalprice,total}) => {
     
 
   
-  <div className="bg-gray-100">
+  <div className="bg-gray-100 max-w-[1530px] w-full">
     <div className="container py-[80px]">
-      <div className="flex shadow-md ">
-        <div className="w-3/4 bg-white px-10 py-10">
+      <div className="flex flex-col md:flex-row shadow-md  ">
+        <div className="md:w-3/4 w-full bg-white px-10 py-10 ">
           <div className="flex justify-between border-b">
             <h1 className="font-semibold text-2xl">Shopping Cart</h1>
             <h2 className="font-semibold text-2xl">{cart.length} Items</h2>
@@ -63,7 +63,7 @@ const Cart = ({cart,handleInc,handleDec,handleRemove,getTotalprice,total}) => {
           </a>
         </div>
   
-        <div id="summary" className="w-1/4 px-8 py-10">
+        <div id="summary" className="md:w-1/4 w-full px-8 py-10 ">
           <h1 className="font-semibold text-2xl border-b pb-8">Order Summary</h1>
           <div className="flex justify-between mt-10 mb-5">
             <span className="font-semibold text-sm uppercase">Items {cart.length} </span>

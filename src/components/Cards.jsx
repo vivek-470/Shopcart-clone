@@ -2,7 +2,7 @@ import React from 'react'
 
 const Cards = () => {
   return (
-    <div>
+    <div className='mt-[0px] md:mt-0'>
     <section class="text-gray-600 body-font">
       <div class="container px-5 py-4 mx-auto flex flex-wrap">
       

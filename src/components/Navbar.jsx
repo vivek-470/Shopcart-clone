@@ -7,8 +7,7 @@ const Navbar = ({cart}) => {
   const nav=[
     {Name:"Home",url:"/"},
     {Name:"All Products",url:"/allproducts"},
-    {Name:"Mens",url:"/mens"},
-    {Name:"Kids",url:"/kids"}
+    {Name:"Contact us",url:"/contactus"}
   ]
 
   const [icon,setIcon]=useState(false)
@@ -27,7 +26,7 @@ const Navbar = ({cart}) => {
        
       
       </ul>
-      <div className=' items-center gap-5  md:flex'>
+      <div className=' items-center gap-5  md:flex flex'>
         <button className='bg-gray-200 h-[35px] w-[55px] rounded-sm'><Link to="login">Login </Link></button>
         <h1><Link to="cart">
         <button className='mt-[20px]'>
