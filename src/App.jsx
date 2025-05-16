@@ -9,7 +9,7 @@ import Footer from './components/Footer.jsx';
 import Login from './components/Login.jsx';
 import Signup from './components/Signup.jsx';
 import { useState } from 'react';
-import SingleProduct from './components/SingleProduct.jsx';
+
 import Contactus from './components/Contactus.jsx';
 
 
@@ -67,7 +67,6 @@ const App = () => {
         <Navbar cart={cart}/>
        <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/allproducts/singleproduct/:id" element={<SingleProduct Addtocart={Addtocart} />}/>
         <Route path="/contactus" element={<Contactus/>}/>
         <Route path="/allproducts" element={<Allproducts Addtocart={Addtocart}/>} />
         <Route path="/cart" element={<Cart cart={cart} handleDec={handleDec} handleInc={handleInc} handleRemove={handleRemove} getTotalprice={getTotalprice} total={total}/> } />
